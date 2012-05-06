@@ -30,8 +30,27 @@ and the compression format that you want to use.
       compression_format => $format
     );
 
-Accepted formats are the same as defined in L<Catalyst::Plugin::Compress>
+Accepted formats for $format are the same as defined in L<Catalyst::Plugin::Compress>
 
+=head1 DESCRIPTION
+
+It is always a good idea to compress the results that are returned from
+your web application, if the client can handle it. L<Catalyst::Plugin::Compress>
+does that for you with very little effort. However, there are times when you might
+not want the reponse to be compressed. For example when a returning a file that has
+already been zipped. The extra compression is unlikely to reduce the file size and
+will just add extra load to the server. This module builds upon the
+L<Catalyst::Plugin::Compress> module and adds the option to skip the compression step
+for certain url paths. So, for example, if you dont want to compress any files in the
+download path, then you would add the following to your config:
+
+    __PACKAGE__->config(
+      compression_excluded => ['^download', ],
+    );
+
+Now all urls on the site that start with download will be uncompressed and everything
+else will be compressed as requested.
+ 
 =head1 SUBROUTINES/METHODS
 
 =head2 setup

@@ -1,15 +1,21 @@
 Catalyst-Plugin-Compress-WithExclusions
 
-The README is used to introduce the module and provide instructions on
-how to install the module, any machine dependencies it may have (for
-example C compilers and installed libraries) and any other information
-that should be provided before the module is installed.
+It is always a good idea to compress the results that are returned from
+your web application, if the client can handle it. L<Catalyst::Plugin::Compress>
+does that for you with very little effort. However, there are times when you might
+not want the reponse to be compressed. For example when a returning a file that has
+already been zipped. The extra compression is unlikely to reduce the file size and
+will just add extra load to the server. This module builds upon the
+L<Catalyst::Plugin::Compress> module and adds the option to skip the compression step
+for certain url paths. So, for example, if you dont want to compress any files in the
+download path, then you would add the following to your config:
 
-A README file is required for CPAN modules since CPAN extracts the README
-file from a module distribution so that people browsing the archive
-can use it to get an idea of the module's uses. It is usually a good idea
-to provide version information here so that people can decide whether
-fixes for the module are worth downloading.
+    __PACKAGE__->config(
+      compression_excluded => ['^download', ],
+    );
+
+Now all urls on the site that start with download will be uncompressed and everything
+else will be compressed as requested.
 
 
 INSTALLATION
