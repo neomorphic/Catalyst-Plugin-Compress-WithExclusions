@@ -1,5 +1,5 @@
-Catalyst-Plugin-Compress-WithExclusions
-=======================================
+=head1 Catalyst-Plugin-Compress-WithExclusions
+
 
 It is always a good idea to compress the results that are returned from
 your web application, if the client can handle it. L<Catalyst::Plugin::Compress>
@@ -11,18 +11,17 @@ L<Catalyst::Plugin::Compress> module and adds the option to skip the compression
 for certain url paths. So, for example, if you don't want to compress any files in the
 download path, then you would add the following to your config:
 
-    ```perl    
     __PACKAGE__->config(
       compression_excluded => ['^download', ],
     );
-    ```
 
 Now all urls on the site that start with download will be uncompressed and everything
 else will be compressed as requested.
 
+=cut
 
-INSTALLATION
-------------
+=head1 INSTALLATION
+
 
 To install this module, run the following commands:
 
@@ -31,8 +30,10 @@ To install this module, run the following commands:
 	./Build test
 	./Build install
 
-SUPPORT AND DOCUMENTATION
--------------------------
+=cut
+
+=head1 SUPPORT AND DOCUMENTATION
+
 
 After installing, you can find documentation for this module with the
 perldoc command.
@@ -54,8 +55,8 @@ You can also look for information at:
         http://search.cpan.org/dist/Catalyst-Plugin-Compress-WithExclusions/
 
 
-LICENSE AND COPYRIGHT
----------------------
+=head1 LICENSE AND COPYRIGHT
+
 
 Copyright (C) 2012 Jody Clements
 
@@ -65,3 +66,4 @@ by the Free Software Foundation; or the Artistic License.
 
 See http://dev.perl.org/licenses/ for more information.
 
+=cut
