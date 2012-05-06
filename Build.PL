@@ -13,7 +13,7 @@ my $builder = Module::Build->new(
     },
     requires => {
         'perl' => 5.006,
-        'Catalyst::Plugin::Compress',
+        'Catalyst::Plugin::Compress' => '0.005',
     },
     add_to_cleanup      => [ 'Catalyst-Plugin-Compress-WithExclusions-*' ],
     create_makefile_pl => 'traditional',
