@@ -54,7 +54,7 @@ sub setup {
 
 =head2 should_compress_response
 
-This is an internal method that fisrt checks to see if the path should be excluded
+This is an internal method that first checks to see if the path should be excluded
 from compression and then passes on to the parent for further checks.
 
 =cut
