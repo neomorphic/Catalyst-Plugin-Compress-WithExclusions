@@ -16,9 +16,7 @@ Version 0.01
 
 our $VERSION = '0.01';
 
-my @excluded = (
-  '^download',
-);
+my @excluded = ();
 
 =head1 SYNOPSIS
 
