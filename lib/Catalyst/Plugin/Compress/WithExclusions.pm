@@ -34,6 +34,11 @@ Accepted formats are the same as defined in L<Catalyst::Plugin::Compress>
 
 =head1 SUBROUTINES/METHODS
 
+=head2 setup
+
+This is an internal method. It checks to see if any exclusions have been
+added in the configuration file.
+
 =cut
 
 sub setup {
